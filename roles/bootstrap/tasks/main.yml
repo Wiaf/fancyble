@@ -10,6 +10,12 @@
     line: '127.0.0.1 localhost {{ inventory_hostname }}'
     state: present
 
+- name: Install required common packages
+  apt:
+    name: "{{ packages_common }}"
+    state: present
+    install_recommends: yes
+
 # Configure sshd_config on target system
 - name: Enable Public-Key-Authentication
   lineinfile:
@@ -78,11 +84,20 @@
     line: "%wheel ALL=(ALL) NOPASSWD: ALL"
     validate: 'visudo -cf %s'
 
-- name: Install required common packages
-  apt:
-    name: "{{ packages_common }}"
-    state: present
-    install_recommends: yes
+- name: copy user scripts
+  synchronize:
+    src: files/
+    dest: /usr/local/bin/
+  tags: userscripts
+
+- name: Set user scripts permissions
+  file:
+    dest: /usr/local/bin/
+    owner: root
+    group: root
+    mode: '1775'
+    recurse: yes
+  tags: userscripts
 
 - name: Install required  host specific packages
   apt:

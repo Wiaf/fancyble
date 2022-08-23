@@ -1,5 +1,4 @@
 ithaka:
-  StrictHostKeyChecking: no
   hosts:
     calth02:
       inventory_hostname: calth02
@@ -19,3 +18,7 @@ bretterboi:
     calth04:
       inventory_hostname: calth04
       ansible_host: 207.180.249.112
+      packages_host:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
