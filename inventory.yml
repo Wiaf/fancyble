@@ -1,0 +1,21 @@
+ithaka:
+  StrictHostKeyChecking: no
+  hosts:
+    calth02:
+      inventory_hostname: calth02
+      ansible_host: 10.0.0.12
+      ansible_host2: 10.0.0.121
+
+    calth05:
+      inventory_hostname: calth05
+      ansible_host: 10.0.0.15
+
+bretterboi:
+  hosts:
+    calth03:
+      inventory_hostname: calth03
+      ansible_host: 62.171.146.19
+
+    calth04:
+      inventory_hostname: calth04
+      ansible_host: 207.180.249.112

@@ -1,0 +1,38 @@
+users:
+  - name: 'wiaf'
+    groups: users, wheel, sudo
+    ssh_key: /Users/wiaf/.ssh/id_rsa.pub
+
+packages_common:
+  - python3
+  - python3-pip
+  - sudo
+  - vim-scripts
+  - less
+  - rsync
+  - iptables
+  - tcpdump
+  - netcat
+  - git
+  - sudo
+  - unzip
+  - bash-completion
+  - apt-transport-https
+  - wget
+  - curl
+  - logrotate
+  - dnsutils
+  - diffutils
+  - screen
+  - htop
+  - snmp
+  - snmpd
+  - net-tools
+  - software-properties-common
+  - rsyslog
+  - vim
+  - systemd
+  - neofetch
+  - nload
+  - nmap
+#  - glances
