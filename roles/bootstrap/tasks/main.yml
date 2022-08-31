@@ -44,7 +44,7 @@
   notify:
     - reload sshd
 
-- name: Ensure group "wheel" exists
+- name: Ensure groups exist
   group:
     name: wheel
     state: present
@@ -59,13 +59,13 @@
 
 - name: Create .ssh directory
   file:
-    path: "/home/{{ item.name }}/.ssh"
+    path: "/home/{{ item.name}}/.ssh"
     state: directory
     mode: 0755
     force: yes
-
   loop: "{{ users }}"
-  tags: .sshdir
+  tags: sshdir
+
 - name: Deploy Authorized Keys
   copy:
     src: authorized_keys.yml
@@ -75,7 +75,7 @@
     mode: 0644
     force: yes
     backup: yes
-  register: auth_deployedvmw
+  register: auth_deployed
 
 - name: Ensuring that wheel is able to use sudo without password
   lineinfile:
