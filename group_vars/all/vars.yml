@@ -3,6 +3,7 @@ users:
     groups: users,wheel,sudo
     ssh_key: /Users/wiaf/.ssh/id_rsa.pub
 
+
 user_groups:
   - name:  users, wheel, sudo
 

@@ -49,7 +49,7 @@
     name: wheel
     state: present
 
-- name: "Create user accounts and add users to groups"
+- name: Create user accounts and add users to groups
   user:
     name: "{{ item.name }}"
     groups: " {{ item.groups }}"

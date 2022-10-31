@@ -6,7 +6,3 @@
 #    - debug: var=ansible_hostname
   roles:
   - bootstrap
-
-- hosts: calth02
-  roles:
-  - samba

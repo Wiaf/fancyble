@@ -1,3 +1,6 @@
+all:
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
 ithaka:
   hosts:
     calth01:
@@ -9,6 +12,9 @@ ithaka:
       inventory_hostname: calth02
       ansible_host: 10.0.0.12
       ansible_host2: 10.0.0.121
+
+    deb-vm01:
+      inventory_hostname: deb-vm01
       samba_shares:
       - name: "kittycastle"
         samba_share_path: "/var/kittycastle"
@@ -23,7 +29,7 @@ ithaka:
 #    calth05:
 #      inventory_hostname: calth05
 #      ansible_host: 10.0.0.15
-#      ansible_host2: 10.0.0.151
+#     ansible_host2: 10.0.0.151
 
 bretterboi:
   hosts:
@@ -34,3 +40,7 @@ bretterboi:
     calth04:
       inventory_hostname: calth04
       ansible_host: 207.180.249.112
+
+    calth05:
+      inventory_hostname: calth05
+      ansible_host: 5.189.169.66
