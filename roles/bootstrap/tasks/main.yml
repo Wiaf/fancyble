@@ -1,7 +1,7 @@
 ---
-- name: "Update Hostnames"
-  hostname:
-    name: "{{ inventory_hostname }}"
+#- name: "Update Hostnames"
+#  hostname:
+#    name: "{{ inventory_hostname }}"
 
 - name: 'Add hostname to /etc/hosts'
   lineinfile:
@@ -10,11 +10,15 @@
     line: '127.0.0.1 localhost {{ inventory_hostname }}'
     state: present
 
-- name: Install required common packages
-  apt:
+#- name: Install required common packages
+#  apt:
+#    name: "{{ packages_common }}"
+#    state: present
+#    install_recommends: yes
+- name: install pacman
+  pacman:
     name: "{{ packages_common }}"
-    state: present
-    install_recommends: yes
+    update_cache: yes
 
 # Configure sshd_config on target system
 - name: Enable Public-Key-Authentication
