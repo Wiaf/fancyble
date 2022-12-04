@@ -1,7 +1,7 @@
 ---
-#- name: "Update Hostnames"
-#  hostname:
-#    name: "{{ inventory_hostname }}"
+- name: "Update Hostnames"
+  hostname:
+    name: "{{ inventory_hostname }}"
 
 - name: 'Add hostname to /etc/hosts'
   lineinfile:
@@ -10,15 +10,11 @@
     line: '127.0.0.1 localhost {{ inventory_hostname }}'
     state: present
 
-#- name: Install required common packages
-#  apt:
-#    name: "{{ packages_common }}"
-#    state: present
-#    install_recommends: yes
-- name: install pacman
-  pacman:
-    name: "{{ packages_common }}"
-    update_cache: yes
+- name: Install required common packages
+  apt:
+    name: "{{ ubuntu_packages_common }}"
+    state: present
+    install_recommends: yes
 
 # Configure sshd_config on target system
 - name: Enable Public-Key-Authentication
@@ -27,8 +23,6 @@
     regexp: "^PubkeyAuthentication"
     line: "PubkeyAuthentication yes"
     state: present
-  notify:
-    - reload sshd
 
 - name: Set AuthorizedKeyFile
   lineinfile:
@@ -36,8 +30,6 @@
     regexp: "^AuthorizedKeysFile"
     line: "AuthorizedKeysFile      .ssh/authorized_keys"
     state: present
-  notify:
-    - reload sshd
 
 - name: Disable PasswordAuthentication
   lineinfile:
