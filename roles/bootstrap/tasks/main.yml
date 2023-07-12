@@ -79,12 +79,13 @@
     regexp: '^%wheel'
     line: "%wheel ALL=(ALL) NOPASSWD: ALL"
     validate: 'visudo -cf %s'
-
-- name: copy user scripts
-  synchronize:
-    src: files/
-    dest: /usr/local/bin/
-  tags: userscripts
+#
+#- name: copy user scripts
+#  synchronize:
+#    src: files/
+#    dest: /usr/local/bin/
+#  tags: userscripts
+#
 
 - name: Set user scripts permissions
   file:
