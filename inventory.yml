@@ -15,7 +15,8 @@ bretterboi:
       ansible_host: 207.180.249.112
     calth03:
       inventory_hostname: calth03
-      ansible_host: 5.189.169.66 
+      ansible_host: 5.189.169.66
+
     calth04:
-      inventory_hostname: calth04
-      ansible_host: 62.171.154.177
+      inventory_hostname: ''
+      ansible_host: ''
