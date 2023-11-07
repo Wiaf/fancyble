@@ -10,6 +10,7 @@ ithaka:
     calth01:
       inventory_hostname: calth01
       ansible_host: 10.0.0.11
+<<<<<<< HEAD
     calth03:
       inventory_hostname: calth02
       ansible_host: ''
@@ -21,4 +22,15 @@ bretterboi:
 
     calth04:
       inventory_hostname: calth04
+=======
+    calth02:
+      inventory_hostname: calth02
+      ansible_host: 207.180.249.112
+    calth03:
+      inventory_hostname: calth03
+>>>>>>> 754e0a2559fe43a292c51045a0771e6b065c3386
       ansible_host: 5.189.169.66
+
+    calth04:
+      inventory_hostname: ''
+      ansible_host: ''
