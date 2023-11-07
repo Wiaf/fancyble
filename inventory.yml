@@ -4,13 +4,21 @@ all:
     host_key_checking : False
 ithaka:
   hosts:
-
-bretterboi:
-  hosts:
+    wiaf-wsl01:
+      inventory_hostname: wiaf-wsl01
+      ansible_host: 172.25.92.21
     calth01:
       inventory_hostname: calth01
+      ansible_host: 10.0.0.11
+    calth03:
+      inventory_hostname: calth02
+      ansible_host: ''
+bretterboi:
+  hosts:
+    calth03:
+      inventory_hostname: calth03
       ansible_host: 207.180.249.112
 
-    calth02:
-      inventory_hostname: calth02
+    calth04:
+      inventory_hostname: calth04
       ansible_host: 5.189.169.66
