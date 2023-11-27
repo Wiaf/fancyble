@@ -7,9 +7,6 @@ ithaka:
 
 bretterboi:
   hosts:
-    calth01:
-      inventory_hostname: calth01
-      ansible_host: 10.0.0.11
     calth02:
       inventory_hostname: calth02
       ansible_host: 62.171.154.177
@@ -17,6 +14,10 @@ bretterboi:
       inventory_hostname: calth03
       ansible_host: 207.180.249.112
 
+ithaka.local:
+    calth01:
+      inventory_hostname: calth01
+      ansible_host: 10.0.0.11
     calth04:
       inventory_hostname: ''
       ansible_host: ''
