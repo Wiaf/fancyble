@@ -12,10 +12,10 @@ bretterboi:
       ansible_host: 10.0.0.11
     calth02:
       inventory_hostname: calth02
-      ansible_host: 207.180.249.112
+      ansible_host: 62.171.154.177
     calth03:
       inventory_hostname: calth03
-      ansible_host: 5.189.169.66
+      ansible_host: 207.180.249.112
 
     calth04:
       inventory_hostname: ''
