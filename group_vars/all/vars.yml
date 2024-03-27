@@ -7,6 +7,7 @@ user_groups:
   - name:  users, wheel, sudo
 
 ubuntu_packages_common:
+  - net-tools
   - apt-transport-https
   - ca-certificates
   - curl
