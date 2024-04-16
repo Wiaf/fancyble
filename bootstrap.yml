@@ -2,7 +2,8 @@
 
 - hosts: all
   gather_facts: yes
-#  tasks:
-#    - debug: var=ansible_hostname
+  become: yes
+  #  tasks:
+  #    - debug: var=ansible_hostname
   roles:
   - bootstrap

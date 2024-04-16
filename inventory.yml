@@ -7,11 +7,12 @@ ithaka:
     wiaf-wsl01:
       inventory_hostname: wiaf-wsl01
       ansible_host: 172.25.92.21
-    calth01:
-      inventory_hostname: calth01
-      ansible_host: 10.0.0.11
 bretterboi:
   hosts:
+    calth01:
+      inventory_hostname: calth01
+      ansible_host: 62.169.25.249
+      ipv6: '2a02:c206:3013:5914::1'
     calth02:
       inventory_hostname: calth02
       ansible_host: 62.171.154.177
